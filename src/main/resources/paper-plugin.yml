@@ -10,5 +10,4 @@ dependencies:
     SingularityLib:
       load: BEFORE
       required: true
-      # This means that your plugin will not have access to their classpath
-      join-classpath: false
+      join-classpath: true
