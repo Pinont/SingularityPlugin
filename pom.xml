@@ -12,7 +12,7 @@
     <name>SingularityPlugin</name>
 
     <properties>
-        <singularity.version>1.0.0</singularity.version>
+        <singularity.version>1.3.1</singularity.version>
         <java.version>23</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
@@ -33,6 +33,16 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>
                 <version>3.5.3</version>
+                <configuration>
+                    <filters>
+                        <filter>
+                            <artifact>com.github.pinont:SingularityLib</artifact>
+                            <includes>
+                                <include>com/github/pinont/singularitylib/plugin/**</include>
+                            </includes>
+                        </filter>
+                    </filters>
+                </configuration>
                 <executions>
                     <execution>
                         <phase>package</phase>

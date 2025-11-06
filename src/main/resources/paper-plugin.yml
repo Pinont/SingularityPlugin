@@ -5,3 +5,10 @@ api-version: '1.21'
 prefix: Singularity
 load: STARTUP
 description: A plugin template for MC Plugin development with SingularityLib
+dependencies:
+  server:
+    SingularityLib:
+      load: BEFORE
+      required: true
+      # This means that your plugin will not have access to their classpath
+      join-classpath: false
