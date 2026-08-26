@@ -1,7 +1,8 @@
 name: SingularityPlugin
 version: '1.0-SNAPSHOT'
 main: com.example.SingularityPlugin
-api-version: '1.21'
+api-version: '26.2'
+folia-supported: true
 prefix: Singularity
 load: STARTUP
 description: A plugin template for MC Plugin development with SingularityLib
