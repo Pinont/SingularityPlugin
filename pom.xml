@@ -42,13 +42,14 @@
     </build>
 
     <repositories>
+        <!-- Public token-free registry (GitHub Pages). See Pinont/singularity-maven. -->
+        <repository>
+            <id>singularity</id>
+            <url>https://raw.githubusercontent.com/Pinont/singularity-maven/gh-pages/</url>
+        </repository>
         <repository>
             <id>papermc-repo</id>
             <url>https://repo.papermc.io/repository/maven-public/</url>
-        </repository>
-        <repository>
-            <id>jitpack.io</id>
-            <url>https://jitpack.io</url>
         </repository>
     </repositories>
 
@@ -63,7 +64,7 @@
              via paper-plugin.yml join-classpath. NEVER shade or bundle it. -->
         <dependency>
             <groupId>com.github.pinont</groupId>
-            <artifactId>SingularityLib</artifactId>
+            <artifactId>singularitylib</artifactId>
             <version>${singularity.version}</version>
             <scope>provided</scope>
         </dependency>

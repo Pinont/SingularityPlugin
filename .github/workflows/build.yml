@@ -6,7 +6,7 @@ on:
   pull_request:
 
 jobs:
-  validate:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -15,7 +15,7 @@ jobs:
         with:
           distribution: temurin
           java-version: '25'
-      # Full `mvn package` requires SingularityLib 2.0.0-SNAPSHOT from GitHub Packages.
-      # Until the v2 line publishes, validate pom + resources only.
-      - name: Validate
-        run: mvn -q validate
+      # Resolves SingularityLib from the PUBLIC token-free registry
+      # (raw.githubusercontent.com/Pinont/singularity-maven). No secrets needed.
+      - name: Build
+        run: mvn -B clean package
