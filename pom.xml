@@ -45,7 +45,7 @@
         <!-- Public token-free registry (GitHub Pages). See Pinont/singularity-maven. -->
         <repository>
             <id>singularity</id>
-            <url>https://raw.githubusercontent.com/Pinont/singularity-maven/gh-pages/</url>
+            <url>https://maven.pinont.me/</url>
         </repository>
         <repository>
             <id>papermc-repo</id>
