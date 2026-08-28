@@ -40,4 +40,23 @@ public class SingularityPluginTest {
                 com.github.pinont.singularitylib.plugin.CorePlugin.class.isAssignableFrom(plugin.getClass()),
                 "template should be a CorePlugin");
     }
+
+    @Test
+    @DisplayName("Template writes & loads config.yml on first boot (CorePlugin lifecycle)")
+    public void configCreated() {
+        // CorePlugin.onEnable creates config.yml with a default 'debug' key on first load
+        java.io.File configFile = new java.io.File(plugin.getDataFolder(), "config.yml");
+        Assertions.assertTrue(configFile.exists(), "config.yml created on enable");
+        var cfg = plugin.getConfig();
+        Assertions.assertNotNull(cfg, "config loaded");
+        Assertions.assertFalse(cfg.getBoolean("debug", true), "debug defaults to false");
+    }
+
+    @Test
+    @DisplayName("Template registers itself in the lib PluginRegistry")
+    public void registersInPluginRegistry() {
+        Assertions.assertTrue(
+                com.github.pinont.singularitylib.api.registry.PluginRegistry.find("SingularityPlugin").isPresent(),
+                "template discovered via lib registry");
+    }
 }
