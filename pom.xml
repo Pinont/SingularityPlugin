@@ -63,7 +63,7 @@
         <!-- Bootstrap model: compile against the lib, but the server provides it at runtime
              via paper-plugin.yml join-classpath. NEVER shade or bundle it. -->
         <dependency>
-            <groupId>com.github.pinont</groupId>
+            <groupId>io.github.pinont</groupId>
             <artifactId>singularitylib</artifactId>
             <version>${singularity.version}</version>
             <scope>provided</scope>
