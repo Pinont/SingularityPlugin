@@ -18,4 +18,4 @@ jobs:
       # Resolves SingularityLib from the PUBLIC token-free registry
       # (raw.githubusercontent.com/Pinont/singularity-maven). No secrets needed.
       - name: Build
-        run: mvn -B clean package
+        run: mvn -B -U clean package
