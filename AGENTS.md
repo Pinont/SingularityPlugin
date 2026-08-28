@@ -13,8 +13,8 @@ SingularityPlugin is the **starter template** of the Singularity Project — a m
 ```bash
 mvn clean package          # shaded jar into target/
 ```
-- Requires **JDK 23**, targets **Paper 1.21+** (`paper-api 1.21.8-R0.1-SNAPSHOT`, provided scope).
-- Depends on `com.github.pinont:SingularityLib:${singularity.version}` from JitPack.
+- Requires **JDK 25**, targets **Paper 26.2+** (`paper-api [26.2.build,)`, provided scope).
+- Depends on `io.github.pinont:singularitylib:${singularity.version}` — releases from Maven Central, snapshots from maven.pinont.me.
 - At runtime, expects the **SingularityLib jar installed as a separate server plugin**: `paper-plugin.yml` declares it as a required server dependency with `load: BEFORE` and **`join-classpath: true`** so the template can see lib classes without shading them.
 
 ## Code layout
